@@ -1,0 +1,115 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; 
+}
+
+body {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+
+header {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+#header-portrait {
+    position: relative; 
+
+    & h2 {
+        font-size: 50px;
+        position: absolute;
+        top: 80%;
+        left: 5%;
+        color: white;
+        text-shadow: 2px 2px black;
+    }
+}
+
+#test {
+    background-color: blue;
+    clip-path: polygon(0 0, 100% 0, 0% 35%, 0% 20%); 
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+} 
+
+.card {
+    display: flex; 
+    flex-direction: column;
+    background-color: white;
+    max-width: 450px;
+    padding: 20px;
+    box-shadow: 2px 2px 5px black;
+    /*margin-left: 20px; */
+} 
+.icon-container {
+    align-self: flex-end;
+}
+
+main {
+    width: 80%;
+}
+
+section {
+    margin-top: 5%;
+}
+
+section h3 {
+    font-size: 3.5rem;
+    grid-row: 1/1; 
+}
+
+.project-card-container {
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.work-card {
+    box-shadow: 2px 2px 5px black;
+    transition: transform 0.5s ease-in-out 0s;  
+
+    & h1 {
+        background-color: red;
+        padding: 20px;
+    }
+
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.05);
+    }
+}
+
+.lower-card {
+    background-color: teal;
+    padding: 20px;
+}
+
+.name-bar {
+    display: flex;
+
+    & .icons {
+        margin-left: auto;
+    }
+}
+
+footer {
+    margin-top: 5%;
+    background-color: teal;
+    width: 100%;
+    display: flex;
+    gap: 10%;
+    padding: 30px;
+}
+
+.contact-information {
+    padding: 30px;
+}
