@@ -5,8 +5,11 @@
 }
 
 img {
-    /*display: block; */
+    display: block; 
     width: 100%; 
+    min-width: 200px;
+    max-width: 400px;
+    /*width: 500px; */
     height: auto; 
 } 
 
@@ -20,60 +23,29 @@ body {
 
 #background-polygon {
     background-color: blue;
-    clip-path: polygon(0 0, 100% 0, 0% 35%, 0% 20%); 
+    clip-path: polygon(0 0, 100% 0, 0% 25%, 0% 20%); 
     width: 100%;
     height: 100%;
     position: absolute;
     z-index: -1;
 } 
 
-/*header {
-    display: flex;
-    align-items: center;
-    position: relative;
-    padding: 10px;
-    width: 100%;
-}
-
-.header-portrait {
-    flex: 1 1 0; 
-
-    & h2 {
-        font-size: 50px;
-        position: absolute;
-        top: 80%;
-        left: 5%;
-        color: white;
-        text-shadow: 2px 2px black;
-    }
-}
-
-.card {
-    flex: 1 1 0;
-
-    display: flex; 
-    flex-direction: column;
-    background-color: white;
-    max-width: 450px; 
-    padding: 20px;
-    box-shadow: 2px 2px 5px black;
-    gap: 10px;
-} */
-
-
 header {
     display: flex;
     justify-content: center;
-    padding: 10px;
+    align-items: center;
+    padding: 5%;
     width: 100%;
 }
 
-.card {
+.header-content {
     display: flex;
-    align-items: center; 
+    justify-content: center;
+    align-items: center;
 } 
 
 .header-portrait {
+
     position: relative;
     & h2 {
         font-size: 50px;
@@ -83,28 +55,21 @@ header {
         color: white;
         text-shadow: 2px 2px black;
     }
-} 
 
-.card img {
-    /*flex: 0 0 0; */
-    margin-top: -20px;
-    display: block;
-}
+    & img {
+        flex: 1;
+    }
+} 
 
 .text {
     display: flex; 
     flex-direction: column;
     background-color: white;
-    max-width: 450px; 
+    max-width: 45ch; 
     padding: 20px;
     box-shadow: 2px 2px 5px black;
     gap: 10px;
 }
-
-
-
-
-
 
 .icon-container {
     align-self: flex-end;
@@ -181,10 +146,6 @@ footer {
     & h4 {
         font-size: 2rem;
     }
-
-    /*& p {
-        width: clamp(45ch, 80%, 50ch);
-    } */
 }
 
 .footer-img-container {
@@ -192,27 +153,52 @@ footer {
     padding: 10px;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 600px) and (max-width: 800px) {
 
     header {
         display: block;
         padding: 100px;
     }
 
-    .card {
-      background-color: teal;
+    .header-content {
       display: block;
+      margin-left: 25%;
+      /*position: centered; */
     }
   
-    .card img {
+    .header-content img {
       background-color: red;
       float: left;
       width: 20%;
-      margin: -2rem 2rem 1rem 0;
+      margin: -5rem 2rem 1rem -5rem;
+    }
+
+    .header-portrait h2 {
+        
+        font-size: 2.8rem;
+        position: absolute;
+        left: 130px;
+        top: -75px;
+        color: white;
+        text-shadow: 2px 2px black;
+        white-space: nowrap;
+        
     }
 
     .text {
         display: block;
     }
-    
+
+    #background-polygon {
+        clip-path: polygon(0 0, 100% 0, 0% 25%, 0% 20%); 
+
+    }
   }
+
+@media (max-width: 600px) {
+
+    .header-content {
+        flex-direction: column;
+        gap: 50px;
+    }
+}
